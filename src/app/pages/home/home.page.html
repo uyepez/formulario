@@ -9,6 +9,18 @@
 
 <ion-content>
 
+    <ion-row class="ion-padding-top">
+      <ion-col>
+        <div class="ion-text-center">
+          <ion-avatar class="avatar" (click)="addImage()" *ngIf="!capturedImage"><img src="./assets/img/defUser.png">
+          </ion-avatar>
+          <ion-avatar class="avatar" (click)="addImage()" *ngIf="capturedImage"><img [src]="capturedImage"></ion-avatar>
+          <h3 class="ion-text-center" (click)="addImage()"> Agregar foto</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+
+
   <form [formGroup]="miFrom" (ngSubmit)="onSubmit()" novalidate >
     <!-- nombre -->
     <ion-item lines="full">

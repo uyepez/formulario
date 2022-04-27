@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 
 
 @Component({
@@ -12,6 +13,7 @@ export class HomePage implements OnInit {
 
   miFrom: FormGroup;
   isSubmit = false;
+  capturedImage = null;
 
   constructor(public formBuilder: FormBuilder, public loadingController: LoadingController) { }
 
@@ -42,6 +44,26 @@ export class HomePage implements OnInit {
 
     const { role, data } = await loading.onDidDismiss();
     
+  }
+
+
+  async addImage(){
+    const image = await Camera.getPhoto({
+        resultType: CameraResultType.Base64,
+        //source: CameraSource.Camera,
+        quality: 80,
+        allowEditing: false,
+        promptLabelCancel: "CANCELAR",
+        promptLabelPhoto: "GALERIA",
+        promptLabelPicture: "CAMARA"
+
+
+      });
+
+      console.log('resultado Foto', image);
+      this.capturedImage = `data:image/jpeg;base64,${image.base64String}`;
+      //this.regUser.imagen = image.base64String;
+      //this.save();
   }
 
 }
