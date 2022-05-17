@@ -21,19 +21,20 @@
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
     "@awesome-cordova-plugins/camera": "^5.41.0",
-    "@awesome-cordova-plugins/file-transfer": "^5.41.0",
+
+    "@capacitor/android": "3.5.1",
     "@capacitor/app": "1.1.1",
     "@capacitor/camera": "^1.3.1",
     "@capacitor/core": "3.5.0",
     "@capacitor/haptics": "1.1.4",
     "@capacitor/keyboard": "1.2.2",
     "@capacitor/status-bar": "1.0.8",
-    "@ionic-native/file-transfer": "^4.20.0",
+
     "@ionic/angular": "^6.0.0",
     "@ionic/pwa-elements": "^3.1.1",
     "angularfire2": "^5.4.2",
     "cordova-plugin-camera": "^6.0.0",
-    "cordova-plugin-file-transfer": "^1.7.1",
+
     "firebase": "~9.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
